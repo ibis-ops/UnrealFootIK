@@ -15,8 +15,7 @@ code is the tricky part the animations are pretty easy to implement with a stand
 
 Here is a sample of most of what the logic is based on:
 
-void TraceFoot()
-{
+
 	FVector SocketLocation = GetMesh()->GetSocketLocation(SocketName);
 	FVector ActorLocation = GetActorLocation();
 
@@ -30,11 +29,11 @@ void TraceFoot()
 	if (GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, CollisionParams))
 	{
 		OutOffset = (Hit.Location - Hit.TraceEnd).Size() - TraceDistance + AdjustOffset;
-		FRotator NewRotation = FRotator(-FMath::RadiansToDegrees(FMath::Atan2(Hit.Normal.X, Hit.Normal.Z)), 0.0f, FMath::RadiansToDegrees(FMath::Atan2(Hit.Normal.Y, Hit.Normal.Z)));
+		FRotator NewRotation = FRotator(-FMath::RadiansToDegrees(FMath::Atan2(Hit.Normal.X, Hit.Normal.Z)), 0.0f, 			FMath::RadiansToDegrees(FMath::Atan2(Hit.Normal.Y, Hit.Normal.Z)));
 		OutRotation = FMath::RInterpTo(OutRotation, NewRotation, DeltaTime, FootInterpSpeed);
 	}
 	else
 	{
 		OutOffset = 0;
 	}
- }
+ 
