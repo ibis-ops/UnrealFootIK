@@ -1,16 +1,14 @@
 # UnrealFootIK
-FootIK
+FootIK - PLEASE NOTE THIS IS JUST THE SOURCE FILE IN UNREAL. You will need to heavely intagrate this for your own use. 
 This needs to be also setup in blueprints for animations. 
 
 In this case the IK methods know when the player has reached near zero velocity. Functions for IK are triggered with a  
 DeltaTime check every frame with a very simple if check to reduce CPU usage. 
 
 In the case that the character has reached near zero velocity the functions for both feet and joints are called.
-Some reletively complicated Differential Calculus and 2d geometry is implemented to find the correct angle that the feet should
-rest at relative to the angle of the floor.
+Some reletively complicated Differential Calculus and 2d geometry is implemented to find the correct angle that the feet should rest at relative to the angle of the floor.
 
-This is combined with state machine animations however you want. I am not going to include the blueprint for this because the
-code is the tricky part the animations are pretty easy to implement with a standard state machine. 
+This is combined with state machine animations however you want. I am not going to include the blueprint for this because the code is the tricky part the animations are pretty easy to implement with a standard state machine. 
 
 
 Here is a sample of most of what the logic is based on:
